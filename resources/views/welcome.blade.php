@@ -13,6 +13,6 @@
         
     </head>
     <body class="antialiased">
-        <x-main />
+        @include('main')
     </body>
 </html>

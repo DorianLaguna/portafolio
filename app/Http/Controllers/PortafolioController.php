@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Tecnologias;
 use Illuminate\Http\Request;
 
-class ProyectoController extends Controller
+class PortafolioController extends Controller
 {
-    public function index(){
-
+    public function __invoke()
+    {
         $tecnologias = Tecnologias::all();
 
-        return view('proyectos.dashboard', [
+        return view('welcome', [
             'tecnologias' => $tecnologias
         ]);
     }
