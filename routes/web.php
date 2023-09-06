@@ -23,6 +23,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/proyectos', [ProyectoController::class, 'index'])->name('proyecto.index');
+Route::get('/proyectos/crear', [ProyectoController::class, 'show'])->name('proyecto.store');
+Route::post('/proyectos/crear', [ProyectoController::class, 'store'])->name('proyecto.form');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
