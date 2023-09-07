@@ -13,7 +13,7 @@
                 <x-input-label for="descripcion" :value="__('Descripcion')" />
     
                 <textarea 
-                name="descripcion" 
+                wire:model="descripcion" 
                 id="descripcion"
                 rows="10"
                 class="border-gray-300 w-full dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
@@ -34,26 +34,26 @@
             </div>
 
             <div class="mt-4">
-                <x-input-label for="fecha_inicio" :value="__('Fecha inicio de proyecto')" />
+                <x-input-label for="dia_inicio" :value="__('Fecha inicio de proyecto')" />
     
-                <x-text-input id="fecha_inicio" class="block mt-1 w-full"
+                <x-text-input id="dia_inicio" class="block mt-1 w-full"
                                 type="date"
-                                name="fecha_inicio"
-                                required autocomplete="current-fecha_inicio" />
+                                wire:model="dia_inicio"
+                                required autocomplete="current-dia_inicio" />
     
-                @error('fecha_inicio')
+                @error('dia_inicio')
                     <livewire:mostrar-alerta :message="$message"/>
                 @enderror</div>
             
             <div class="mt-4">
-                <x-input-label for="fecha_final" :value="__('Fecha final del proyecto')" />
+                <x-input-label for="dia_final" :value="__('Fecha final del proyecto')" />
     
-                <x-text-input id="fecha_final" class="block mt-1 w-full"
+                <x-text-input id="dia_final" class="block mt-1 w-full"
                                 type="date"
-                                name="fecha_final"
-                                required autocomplete="current-fecha_final" />
+                                wire:model="dia_final"
+                                required autocomplete="current-dia_final" />
     
-                @error('fecha_final')
+                @error('dia_final')
                     <livewire:mostrar-alerta :message="$message"/>
                 @enderror
             </div>
@@ -61,15 +61,21 @@
             <div class="mt-4">
                 <x-input-label for="imagen" :value="__('Imagen previa')" />
                 
-                <input type="file">
+                <input type="file" class="dark:text-white" wire:model='imagen' accept="image/*">
 
-                @error('titulo')
+                <div class="my-5">
+                    @if ($imagen)
+                        Imagen:
+                        <img src="{{$imagen->temporaryUrl()}}">
+                    @endif
+                </div>
+                @error('imagen')
                     <livewire:mostrar-alerta :message="$message"/>
                 @enderror
             </div>
     
             <div class="flex items-center justify-end mt-4">
-                <x-primary-button class="ml-3">
+                <x-primary-button class="ml-3 bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-800 dark:hover:bg-indigo-800 dark:text-white">
                     {{ __('Crear') }}
                 </x-primary-button>
             </div>

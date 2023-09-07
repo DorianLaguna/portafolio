@@ -9,6 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 
+                @if (session()->has('mensaje'))
+                    <div class=" uppercase border border-green-100 text-green-600 font-bold p-2 my-2">
+                        {{session('mensaje')}}
+                    </div>
+                @endif
+
                 <div class="md:flex justify-between my-3 p-5">
                     <x-project-link :href="route('proyecto.form')">
                         Agregar Proyecto
@@ -20,11 +26,32 @@
                         Editar tecnologias
                     </x-project-link>
                 </div>
-                @foreach ($proyectos as $proyecto)
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
-                        {{ $proyectos->titulo }}
-                    </div>                    
-                @endforeach
+                
+
+                <div>
+                    @foreach ($proyectos as $proyecto)
+                        
+                        <div class="py-12">
+                            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                                <div class="bg-gray-100 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                                    <div class="p-5 flex items-center justify-between text-gray-900 dark:text-gray-100">
+                                        <h2 class="text-lg title-font font-medium">{{ $proyecto->titulo }}</h2>
+                                        
+                                        <div>
+                                            <x-project-link :href="route('proyecto.form')">
+                                                Editar
+                                            </x-project-link>
+                                            <x-project-link :href="route('proyecto.form')" class="bg-red-600">
+                                                Eliminar
+                                            </x-project-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Proyectos;
-use App\Models\Tecnologias;
+use App\Models\Proyecto;
+use App\Models\Tecnologia;
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
@@ -15,7 +15,7 @@ class ProyectoController extends Controller
 
     public function index(){
 
-        $proyectos = Proyectos::all()->only('nombre');
+        $proyectos = Proyecto::all();
 
         return view('proyectos.dashboard', [
             'proyectos' => $proyectos

@@ -2,26 +2,52 @@
 
 namespace App\Livewire;
 
+use App\Models\Proyecto;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class AgregarProyecto extends Component
 {
     public $titulo;
     public $descripcion;
     public $link;
-    public $fecha_inicio;
-    public $fecha_final;
+    public $dia_inicio;
+    public $dia_final;
+    public $imagen;
+
+    use WithFileUploads;
 
     protected $rules = [
         'titulo' => 'required',
         'descripcion' => 'required',
         'link' => 'required',
-        'fecha_inicio' => 'required',
-        'fecha_final' => 'required'
+        'dia_inicio' => 'required',
+        'dia_final' => 'required',
+        'imagen' => 'required|image|max:1024'
     ];
 
     public function agregarProyecto(){
         $datos = $this->validate();
+
+        //Almacena la imagen
+        $imagen = $this->imagen->store('public/proyectos');
+        $datos['imagen'] = str_replace('public/proyectos/', '', $imagen);
+
+        //Crea el proyecto
+        Proyecto::create([
+            'titulo' => $datos['titulo'],
+            'descripcion' => $datos['descripcion'],
+            'imagen' => $datos['imagen'],
+            'link' => $datos['link'],
+            'dia_inicio' => $datos['dia_inicio'],
+            'dia_final' => $datos['dia_final'],
+        ]);
+        //Crear mensaje
+        session()->flash('mensaje', 'Se publico el proyecto correctamente');
+
+        //redireccionar
+        return redirect()->route('proyecto.index');
+
     }
 
     public function render()
