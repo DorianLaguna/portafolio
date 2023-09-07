@@ -8,12 +8,14 @@ class AgregarProyecto extends Component
 {
     public $titulo;
     public $descripcion;
+    public $link;
     public $fecha_inicio;
     public $fecha_final;
 
     protected $rules = [
         'titulo' => 'required',
         'descripcion' => 'required',
+        'link' => 'required',
         'fecha_inicio' => 'required',
         'fecha_final' => 'required'
     ];

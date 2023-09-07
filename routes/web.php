@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', PortafolioController::class);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('proyectos.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/proyectos', [ProyectoController::class, 'index'])->name('proyecto.index');

@@ -43,10 +43,10 @@
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-11 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
-                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Mis habilidades</h1>
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">Mis habilidades</h1>
                 </div>
 
-                <div class="flex justify-center -m-4 text-center border-2 border-gray-200">
+                <div class="flex justify-center -m-4 text-center border-2 border-gray-300 dark:border-gray-500">
                     
                     @foreach ($tecnologias as $tecnologia)
                         
@@ -56,7 +56,7 @@
                                 <path d="M8 17l4 4 4-4m-4-5v9"></path>
                                 <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
                             </svg>
-                            <p class="leading-relaxed">{{$tecnologia->nombre}}</p>
+                            <p class="leading-relaxed text-gray-700 dark:text-gray-300">{{$tecnologia->nombre}}</p>
                         </div>
                     </div>
                     @endforeach
@@ -65,9 +65,9 @@
           </section>
 
         {{-- seccion de cada proyecto --}}
-        <section class="text-gray-400 bg-gray-100 dark:bg-gray-900 mt-11 body-font">
+        <section class="text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 mt-11 body-font">
             <div class="flex flex-col text-center w-full my-6">
-                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Proyectos</h1>
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">Proyectos</h1>
             </div>
             <div class="container mx-auto flex px-5 pb-11 md:flex-row flex-col items-center">
               <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">

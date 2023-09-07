@@ -12,7 +12,7 @@
 
         
     </head>
-    <body class="antialiased">
+    <body>
         @include('main')
     </body>
 </html>
