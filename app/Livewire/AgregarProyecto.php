@@ -19,7 +19,7 @@ class AgregarProyecto extends Component
 
     protected $rules = [
         'titulo' => 'required',
-        'descripcion' => 'required',
+        'descripcion' => 'required|max:222',
         'link' => 'required',
         'dia_inicio' => 'required',
         'dia_final' => 'required',

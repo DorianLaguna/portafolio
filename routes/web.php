@@ -18,13 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', PortafolioController::class);
 
-Route::get('/dashboard', function () {
-    return view('proyectos.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/proyectos', [ProyectoController::class, 'index'])->name('proyecto.index');
-Route::get('/proyectos/crear', [ProyectoController::class, 'show'])->name('proyecto.store');
-Route::post('/proyectos/crear', [ProyectoController::class, 'store'])->name('proyecto.form');
+Route::get('/proyectos/crear', [ProyectoController::class, 'create'])->name('proyecto.store');
+Route::get('/proyectos/editar/{proyecto:titulo}', [ProyectoController::class, 'show'])->name('proyecto.form');
+Route::patch('/proyectos/editar/{proyecto:titulo}', [ProyectoController::class, 'update'])->name('proyecto.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

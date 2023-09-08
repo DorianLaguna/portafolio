@@ -23,19 +23,18 @@ class ProyectoController extends Controller
     }
 
     public function store(Request $request){
-        $this->validate($request, [
-            'titulo' => 'required|max:255',
-            'descripcion' => 'required',
-            'imagen' => 'required',
-            'dia_final' => 'required',
-            'dia_inicio' => 'required'
-        ]);
-
-        return redirect()->route('proyecto.index');
+        
     }
 
-    public function show(){
+    public function create(){
 
         return view('proyectos.crear');
+    }
+
+    public function show(Proyecto $proyecto){
+
+        return view('proyectos.editar',[
+            'proyecto' => $proyecto
+        ]);
     }
 }
