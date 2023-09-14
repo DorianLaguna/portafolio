@@ -21,24 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        DB::table('tecnologias')->insert([
-            'nombre' => 'html',
-            'imagen' => 'jfasdljfklasdj.jpg',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        DB::table('tecnologias')->insert([
-            'nombre' => 'JavaScript',
-            'imagen' => 'jfasdljfklasdj.jpg',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        DB::table('tecnologias')->insert([
-            'nombre' => 'PHP',
-            'imagen' => 'jfasdljfklasdj.jpg',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+        
         
     }
 }

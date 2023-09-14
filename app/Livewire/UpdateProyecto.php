@@ -4,18 +4,12 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class Contador extends Component
+class UpdateProyecto extends Component
 {
 
     public $texto;
     public $cuenta = 0;
     public $proyecto;
-    
-
-    public function render()
-    {
-        return view('livewire.contador');
-    }
 
     public function mount($proyecto, $texto){
         $this->texto = $texto;
@@ -24,5 +18,10 @@ class Contador extends Component
 
     public function updateCounter(){
         $this->cuenta = strlen($this->texto);
+    }
+    
+    public function render()
+    {
+        return view('livewire.update-proyecto');
     }
 }

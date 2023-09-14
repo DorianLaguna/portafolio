@@ -10,12 +10,19 @@
             </div>
     
             <div class="mt-4">
-                <x-input-label for="descripcion" :value="__('Descripcion')" />
+                <div class="flex justify-between">
+                    <x-input-label for="descripcion" :value="__('Descripcion')" />
+
+                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                        {{$contador}}/220
+                    </div>
+                </div>
     
                 <textarea 
                 wire:model="descripcion" 
                 id="descripcion"
                 rows="10"
+                wire:keydown="updateLenght"
                 class="border-gray-300 w-full dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
                 ></textarea>
     

@@ -1,5 +1,5 @@
 <x-guest-layout>
 
-    <livewire:contador :proyecto="$proyecto" :texto="$proyecto->descripcion" />
+    <livewire:update-proyecto :proyecto="$proyecto" :texto="$proyecto->descripcion" />
 
 </x-guest-layout>

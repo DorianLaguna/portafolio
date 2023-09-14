@@ -14,17 +14,22 @@ class AgregarProyecto extends Component
     public $dia_inicio;
     public $dia_final;
     public $imagen;
+    public $contador = 0;
 
     use WithFileUploads;
 
     protected $rules = [
         'titulo' => 'required',
-        'descripcion' => 'required|max:222',
+        'descripcion' => 'required|max:220',
         'link' => 'required',
         'dia_inicio' => 'required',
         'dia_final' => 'required',
         'imagen' => 'required|image|max:1024'
     ];
+
+    public function updateLenght(){
+        $this->contador = strlen($this->descripcion);
+    }
 
     public function agregarProyecto(){
         $datos = $this->validate();
