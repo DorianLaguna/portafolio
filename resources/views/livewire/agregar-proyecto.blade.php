@@ -72,7 +72,7 @@
 
                 <div class="my-5">
                     @if ($imagen)
-                        Imagen:
+                        <p class="dark:text-white">Imagen</p>
                         <img src="{{$imagen->temporaryUrl()}}">
                     @endif
                 </div>
