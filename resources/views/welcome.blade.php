@@ -14,5 +14,7 @@
     </head>
     <body>
         @include('main')
+
+        
     </body>
 </html>

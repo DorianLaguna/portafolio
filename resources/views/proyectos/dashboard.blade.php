@@ -37,13 +37,12 @@
                                     <div class="p-5 flex items-center justify-between text-gray-900 dark:text-gray-100">
                                         <h2 class="text-lg title-font font-medium">{{ $proyecto->titulo }}</h2>
                                         
-                                        <div>
+                                        <div class="md:flex gap-2">
                                             <x-project-link :href="route('proyecto.form', ['proyecto' => $proyecto])">
                                                 Editar
                                             </x-project-link>
-                                            <x-project-link :href="route('proyecto.form', ['proyecto' => $proyecto])" class="bg-red-600">
-                                                Eliminar
-                                            </x-project-link>
+
+                                            <livewire:boton-borrar :proyecto="$proyecto">
                                         </div>
                                     </div>
                                 </div>
@@ -55,4 +54,36 @@
             </div>
         </div>
     </div>
+
+    @push('scripts')
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <script>
+            Livewire.on('borrarProyecto', proyectoId => {
+            
+                Swal.fire({
+                title: '¿Estas seguro?',
+                text: "¿No podras recuperar el proyecto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, borrar definitivamente',
+                cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('eliminarProyecto', [proyectoId])
+                    Swal.fire(
+                    'Eliminado!',
+                    'El proyecto ha sido eliminado correctamente.',
+                    'success'
+                    )
+                    setTimeout(() => {
+                        location.reload();
+                    }, 3000);
+                }
+                })
+            })
+        </script>
+    @endpush
 </x-app-layout>
