@@ -19,7 +19,7 @@
                     <x-project-link :href="route('proyecto.store')">
                         Agregar Proyecto
                     </x-project-link>
-                    <x-project-link :href="route('proyecto.store')">
+                    <x-project-link :href="route('informacion.edit')">
                         Editar presentacion Perfil
                     </x-project-link>
                     <x-project-link :href="route('proyecto.store')">
