@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Informacion;
 use App\Models\Proyecto;
 use App\Models\Tecnologia;
 use Illuminate\Http\Request;
@@ -12,10 +13,12 @@ class PortafolioController extends Controller
     {
         $tecnologias = Tecnologia::all();
         $proyectos = Proyecto::all();
+        $informacion = Informacion::all();
 
         return view('welcome', [
             'tecnologias' => $tecnologias,
-            'proyectos' => $proyectos
+            'proyectos' => $proyectos,
+            'informacion' => $informacion[0]
         ]);
     }
 }

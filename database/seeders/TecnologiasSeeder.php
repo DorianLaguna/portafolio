@@ -38,6 +38,12 @@ class TecnologiasSeeder extends Seeder
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
         DB::table('tecnologias')->insert([
+            'nombre' => 'MySQL',
+            'imagen' => 'jfasdljfklasdj.jpg',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('tecnologias')->insert([
             'nombre' => 'CSS',
             'imagen' => 'jfasdljfklasdj.jpg',
             'created_at' => date('Y-m-d H:i:s'),
