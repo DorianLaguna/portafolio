@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 
                 @if (session()->has('mensaje'))
-                    <div class=" uppercase border border-green-100 text-green-600 font-bold p-2 my-2">
+                    <div class=" uppercase border border-green-300 text-green-600 font-bold p-2 my-2">
                         {{session('mensaje')}}
                     </div>
                 @endif
@@ -22,7 +22,7 @@
                     <x-project-link :href="route('informacion.edit')">
                         Editar presentacion Perfil
                     </x-project-link>
-                    <x-project-link :href="route('proyecto.store')">
+                    <x-project-link :href="route('tecnologias.index')">
                         Editar tecnologias
                     </x-project-link>
                 </div>

@@ -15,9 +15,8 @@
                 @csrf
             </form>
 
-            <form action="{{route('informacion.edit')}}" class="w-full">
+            <form action="{{route('informacion.store')}}" class="w-full" method="POST">
                 @csrf
-                @method('PATCH')
         
                 <div>
                     <x-input-label for="descripcion" :value="__('Descripcion')" />
@@ -34,8 +33,14 @@
                 
                 <div>
                     <x-input-label for="sobre_mi" :value="__('Sobre_mi')" />
-                    <x-text-input id="sobre_mi" class="block mt-1 w-full" type="text" name="sobre_mi" value="{{$informacion->sobre_mi}}" required autofocus autocomplete="sobre_mi" />
-                        
+                    <textarea 
+                    name="sobre_mi" 
+                    id="sobre_mi"
+                    rows="3"
+                    name="sobre_mi"
+                    class="border-gray-300 w-full dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+                    >{{$informacion->sobre_mi}}</textarea>  
+
                     <x-input-error :messages="$errors->get('sobre_mi')" class="mt-2" />
                 </div>
 
@@ -46,7 +51,14 @@
                     />
                 </div>
                 
+                
+                <div class="flex justify-end mt-4">
+                    <x-primary-button class="block mb-2 md:mb-0 md:inline-flex md:items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-200 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-800 focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                        Guardar Cambios
+                    </x-primary-button>
+                </div>
             </form>
+
     
         </div>
 
