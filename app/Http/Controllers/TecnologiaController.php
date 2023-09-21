@@ -20,4 +20,13 @@ class TecnologiaController extends Controller
             'tecnologias' => $tecnologias
         ]);
     }
+
+    public function delete(Request $request){
+
+        $tecnologia = Tecnologia::find($request->id);
+
+        if($tecnologia) $tecnologia->delete();
+
+        return redirect()->route('tecnologias.index')->with('mensaje', 'Eliminado correctamente');
+    }
 }
