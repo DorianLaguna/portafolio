@@ -36,7 +36,9 @@
                                 @foreach ($tecnologias as $tecnologia)
                                 <div class="">
                                     <div class="px-4 py-5 rounded-lg ">
-                                        <img src="uploads/{{$tecnologia->imagen}}" class="inline-block w-16" alt="no hay imagen">
+                                        <div class="w-16 h-16 flex items-start">
+                                            <img src="uploads/{{$tecnologia->imagen}}" class="inline-block w-16" alt="no hay imagen">
+                                        </div>
                                         <p class="leading-relaxed text-gray-700 dark:text-gray-300">{{$tecnologia->nombre}}</p>
                                     </div>
                                         <form action="{{route('tecnologias.delete')}}" method="POST">
