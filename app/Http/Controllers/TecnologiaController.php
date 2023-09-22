@@ -21,11 +21,32 @@ class TecnologiaController extends Controller
         ]);
     }
 
+    public function store(Request $request){
+        $this->validate($request, [
+            'nombre' => 'required',
+            'imagen' => 'required'
+        ]);
+
+        Tecnologia::create([
+            'nombre' => $request->nombre,
+            'imagen' => $request->imagen
+        ]);
+
+        return redirect()->route('tecnologias.index');
+    }
+
+    public function show(){
+
+        return view('tecnologias.crear');
+    }
+
     public function delete(Request $request){
 
         $tecnologia = Tecnologia::find($request->id);
-
-        if($tecnologia) $tecnologia->delete();
+        
+        unlink(public_path('uploads/' . $tecnologia->imagen));
+        
+        $tecnologia->delete();
 
         return redirect()->route('tecnologias.index')->with('mensaje', 'Eliminado correctamente');
     }

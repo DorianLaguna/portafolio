@@ -30,6 +30,8 @@ Route::get('editar-presentacion', [InformationController::class, 'edit'])->name(
 Route::post('editar-presentacion', [InformationController::class, 'store'])->name('informacion.store');
 
 Route::get('tecnologias', [TecnologiaController::class, 'index'])->name('tecnologias.index');
+Route::get('tecnologias/crea', [TecnologiaController::class, 'show'])->name('tecnologias.store');
+Route::post('tecnologias/crea', [TecnologiaController::class, 'store']);
 Route::delete('tecnologias/elimina', [TecnologiaController::class, 'delete'])->name('tecnologias.delete');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
