@@ -3,15 +3,19 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Agrega una Tecnologia') }}
         </h2>
+
+        
     </x-slot>
 
     
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                
+                <x-project-link href="{{route('proyecto.index')}}" class="mt-5 ml-3">
+                    Volver
+                </x-project-link >
                 <section class="text-gray-600 body-font bg-gray-800">
-                    <div class="container px-5 py-11 mx-auto">
+                    <div class="container px-5 pb-11 mx-auto">
                         <div class="flex flex-col text-center w-full mb-12">
                             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">Tecnologias</h1>
                         </div>
