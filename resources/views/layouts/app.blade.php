@@ -17,7 +17,10 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            
+            <div id="navbar" class="md:sticky md:top-0 md:z-50">
+                @include('layouts.navigation')
+            </div>
 
             <!-- Page Heading -->
             @if (isset($header))

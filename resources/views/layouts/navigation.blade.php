@@ -5,19 +5,19 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:flex">
-                    <x-nav-link :href="'#sobre-mi'" :active="request()->routeIs('proyecto.index')">
+                    <x-nav-link :href="'#sobre-mi'">
                         {{ __('Sobre mi') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="'#mis-habilidades'" :active="request()->routeIs('proyecto.index')">
+                    <x-nav-link :href="'#mis-habilidades'">
                         {{ __('Mis habilidades') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="'#proyectos'" :active="request()->routeIs('proyecto.index')">
+                    <x-nav-link :href="'#proyectos'">
                         {{ __('Mis proyectos') }}
                     </x-nav-link>
                 </div>
@@ -79,20 +79,20 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('proyecto.index')" :active="request()->routeIs('proyecto.index')">
-                {{ __('Nuevo') }}
+            <x-responsive-nav-link :href="'#sobre-mi'">
+                {{ __('Sobre mi') }}
             </x-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('proyecto.index')" :active="request()->routeIs('proyecto.index')">
-                {{ __('Nuevo') }}
+            <x-responsive-nav-link :href="'#mis-habilidades'">
+                {{ __('Mis habilidades') }}
             </x-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('proyecto.index')" :active="request()->routeIs('proyecto.index')">
-                {{ __('Nuevo') }}
+            <x-responsive-nav-link :href="'#proyectos'">
+                {{ __('Proyectos') }}
             </x-responsive-nav-link>
         </div>
 
