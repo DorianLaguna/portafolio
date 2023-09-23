@@ -15,7 +15,7 @@ class PortafolioController extends Controller
         $proyectos = Proyecto::all();
         $informacion = Informacion::all();
 
-        return view('welcome', [
+        return view('main', [
             'tecnologias' => $tecnologias,
             'proyectos' => $proyectos,
             'informacion' => $informacion[0]

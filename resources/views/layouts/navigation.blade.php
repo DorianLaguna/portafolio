@@ -5,19 +5,19 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:flex">
-                    <x-nav-link :href="route('proyecto.index')" :active="request()->routeIs('proyecto.index')">
+                    <x-nav-link :href="'#sobre-mi'" :active="request()->routeIs('proyecto.index')">
                         {{ __('Sobre mi') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('proyecto.index')" :active="request()->routeIs('proyecto.index')">
+                    <x-nav-link :href="'#mis-habilidades'" :active="request()->routeIs('proyecto.index')">
                         {{ __('Mis habilidades') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('proyecto.index')" :active="request()->routeIs('proyecto.index')">
+                    <x-nav-link :href="'#proyectos'" :active="request()->routeIs('proyecto.index')">
                         {{ __('Mis proyectos') }}
                     </x-nav-link>
                 </div>

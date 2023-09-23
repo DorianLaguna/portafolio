@@ -34,7 +34,7 @@ class InformationController extends Controller
         $pathImagen = public_path('uploads/' . $informacion->imagen);
         
         if($request->imagen !== null){
-            $datos = unlink($pathImagen);
+            unlink($pathImagen);
         }
 
         $informacion->descripcion = $request->descripcion;
