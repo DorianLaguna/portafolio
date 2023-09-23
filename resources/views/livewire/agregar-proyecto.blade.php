@@ -14,7 +14,7 @@
                     <x-input-label for="descripcion" :value="__('Descripcion')" />
 
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">
-                        {{$contador}}/220
+                        {{$contador}}/270
                     </div>
                 </div>
     

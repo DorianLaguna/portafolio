@@ -8,7 +8,6 @@ use Livewire\WithFileUploads;
 
 class UpdateProyecto extends Component
 {
-
     public $texto;
     public $cuenta = 0;
     public $proyecto;
@@ -27,16 +26,16 @@ class UpdateProyecto extends Component
 
     protected $rules = [
         'titulo' => 'required',
-        'descripcion' => 'required|max:220',
+        'descripcion' => 'required|max:270',
         'link' => 'required',
         'dia_inicio' => 'required',
         'dia_final' => 'required',
         'imagen_nueva' => 'nullable|image|max:2048'
     ];
 
-    public function mount($proyecto, $texto){
-        $this->texto = $texto;
-        $this->cuenta = strlen($this->texto);
+    public function mount($proyecto){
+        $this->texto = $proyecto->texto;
+        $this->cuenta = strlen($proyecto->descripcion);
         $this->proyecto_id = $proyecto->id;
 
         $this->titulo = $proyecto->titulo;
@@ -47,7 +46,7 @@ class UpdateProyecto extends Component
     }
 
     public function updateCounter(){
-        $this->cuenta = strlen($this->texto);
+        $this->cuenta = strlen($this->descripcion);
     }
 
     public function editarProyecto(){

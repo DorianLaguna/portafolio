@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('proyectos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('descripcion');
+            $table->string('descripcion', 270);
             $table->string('imagen');
             $table->string('link');
             $table->date('dia_inicio');

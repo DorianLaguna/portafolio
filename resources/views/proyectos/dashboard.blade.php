@@ -30,9 +30,9 @@
 
                 <div>
                     
-                    <div class="py-12 ">
+                    <div class="py-11">
                         @foreach ($proyectos as $proyecto)
-                            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 ">
+                            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-1">
                                 <div class="bg-gray-100 dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
                                     <div class="p-5 flex items-center justify-between text-gray-900 dark:text-gray-100">
                                         <h2 class="text-lg title-font font-medium">{{ $proyecto->titulo }}</h2>

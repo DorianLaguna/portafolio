@@ -18,7 +18,7 @@
                         </div>
 
                         <div class="flex flex-col items-center text-center justify-center">
-                            <h2 class="font-medium title-font mt-4 dark:text-white text-gray-900 text-lg">Phoebe Caulfield</h2>
+                            <h2 class="font-medium title-font mt-4 dark:text-white text-gray-900 text-lg">Dorian Laguna Campos</h2>
                             <div class="w-12 h-1 dark:bg-blue-500 bg-indigo-500 rounded mt-2 mb-4"></div>
                             <p class="text-base dark:text-gray-400">{{$informacion->sobre_mi}}</p>
                         </div>
@@ -35,9 +35,9 @@
 
     {{-- Seccion mi skills --}}
     <section class="text-gray-600 body-font">
-        <div class="container px-5 py-11 mx-auto">
+        <div id="mis-habilidades" class="container px-5 py-11 mx-auto">
             <div class="flex flex-col text-center w-full mb-8">
-                <h1 id="mis-habilidades" class="title-font sm:text-4xl text-3xl font-medium text-gray-900 dark:text-white">Mis habilidades</h1>
+                <h1 class="title-font sm:text-4xl text-3xl font-medium text-gray-900 dark:text-white">Mis habilidades</h1>
             </div>
 
             <div class="flex justify-center -m-4 text-center">
@@ -89,23 +89,22 @@
     
 
     @push('scripts')
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-    
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-    
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+        
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+        
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        });
-    </script>
-    
+        </script>
     @endpush
 </x-app-layout>
