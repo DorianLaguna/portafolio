@@ -34,15 +34,15 @@
     </section>
 
     {{-- Seccion mi skills --}}
-    <section id="mis-habilidades" class="text-gray-600 body-font">
-        <div  class="container px-5 py-11 mx-auto">
+    <section class="text-gray-600 body-font">
+        <div id="mis-habilidades" class="container px-5 py-14 mx-auto">
             <div class="flex flex-col text-center w-full mb-8">
                 <h2 class="title-font sm:text-4xl text-3xl font-medium text-gray-900 dark:text-white">Mis habilidades</h1>
             </div>
 
             <div class="flex justify-center -m-4 text-center">
                         
-                <div class="p-4 mt-6 flex justify-center flex-wrap gap-5 w-full bg-gray-800 sm:rounded-md">
+                <div class="p-4 mt-6 flex justify-center flex-wrap gap-5 w-full bg-white dark:bg-gray-800 sm:rounded-md">
                     @foreach ($tecnologias as $tecnologia)
                     <div class="">
                         <div class="px-4 py-5 flex flex-col justify-between rounded-lg ">
@@ -59,9 +59,9 @@
         </section>
 
     {{-- seccion de cada proyecto --}}
-    <section class="text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 mt-11 body-font">
+    <section id="proyectos" class="text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 pt-11 body-font">
         <div class="flex flex-col text-center w-full my-6">
-            <h2 id="proyectos" class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">Proyectos</h1>
+            <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">Proyectos</h1>
         </div>
 
         @foreach ($proyectos as $proyecto)
@@ -88,12 +88,12 @@
     </section>
 
     {{-- seccion contacto --}}
-    <section class="text-gray-600 body-font">
-      <div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+    <section id="contacto" class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-col px-5 py-11 justify-center items-center">
         <div class=" dark:text-gray-400 w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
           <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">Contacto</h1>
           <p class="mb-5 text-lg leading-relaxed">Si estas interesado en contratarme, llamame, enviame un email, o un mensaje via Linkedin!</p>
-            <div class="bg-gray-800 rounded-md w-3/4 h-32 flex flex-col justify-center gap-2 p-4">
+            <div class="bg-white dark:bg-gray-800 rounded-md w-3/4 h-32 flex flex-col justify-center gap-2 p-4">
                 <div class="flex justify-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', PortafolioController::class);
+Route::get('/', PortafolioController::class)->name('main');
 
 Route::get('/proyectos', [ProyectoController::class, 'index'])->name('proyecto.index');
 Route::get('/proyectos/crear', [ProyectoController::class, 'create'])->name('proyecto.store');
