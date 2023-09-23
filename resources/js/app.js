@@ -13,7 +13,7 @@ const dropzone = new Dropzone('#dropzone', {
 
 dropzone.on('removedfile', function(){
     document.querySelector('[name="imagen"]').value = '';
-    // fetch(`/imagenes/eliminar`)  el problema de la eliminacion de imagenes del servidor no funciona
+    // fetch(`/imagenes/eliminar`)
     //     .then((res) => res.json());
 })
 

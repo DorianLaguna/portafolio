@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                <img class="object-cover object-center rounded" alt="imagen" src="{{asset('storage/proyectos/' . $proyecto->imagen)}}">
+                <img src="{{ asset('storage/proyectos/' . $proyecto->imagen)}}" class="object-cover object-center rounded" alt="imagen">
             </div>
             </div>
         @endforeach
