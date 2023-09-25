@@ -22,6 +22,9 @@
                     <x-project-link :href="route('informacion.edit')">
                         Editar presentacion Perfil
                     </x-project-link>
+                    <x-project-link :href="route('contacto.index')">
+                        Editar contacto
+                    </x-project-link>
                     <x-project-link :href="route('tecnologias.index')">
                         Editar tecnologias
                     </x-project-link>

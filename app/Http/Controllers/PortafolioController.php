@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
 use App\Models\Informacion;
 use App\Models\Proyecto;
 use App\Models\Tecnologia;
@@ -14,11 +15,13 @@ class PortafolioController extends Controller
         $tecnologias = Tecnologia::all();
         $proyectos = Proyecto::all();
         $informacion = Informacion::all();
+        $contacto = Contacto::find(1);
 
         return view('main', [
             'tecnologias' => $tecnologias,
             'proyectos' => $proyectos,
-            'informacion' => $informacion[0]
+            'informacion' => $informacion[0],
+            'contacto' => $contacto
         ]);
     }
 }

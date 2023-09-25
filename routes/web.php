@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\PortafolioController;
@@ -33,6 +34,9 @@ Route::get('tecnologias', [TecnologiaController::class, 'index'])->name('tecnolo
 Route::get('tecnologias/crea', [TecnologiaController::class, 'show'])->name('tecnologias.store');
 Route::post('tecnologias/crea', [TecnologiaController::class, 'store']);
 Route::delete('tecnologias/elimina', [TecnologiaController::class, 'delete'])->name('tecnologias.delete');
+
+Route::get('contacto', [ContactoController::class, 'index'])->name('contacto.index');
+Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
 Route::get('/imagenes/eliminar', [ImagenController::class, 'delete'])->name('imagenes.delete');
