@@ -72,11 +72,15 @@
                 </h1>
                 <p class="mb-3 text-sm">{{Str::substr(Str::replace('-', '/', $proyecto->dia_inicio), 0, 7) }} - {{Str::substr(Str::replace('-', '/', $proyecto->dia_final), 0, 7)}}</p>
                 <p class="mb-8 text-lg leading-relaxed">{{$proyecto->descripcion}}</p>
-                <div class="flex justify-between gap-3">
+                <div class="flex justify-between w-full">
                     <x-project-link :href="$proyecto->link">
                         Link
                     </x-project-link>
-
+                    <div class="ml-3">
+                        @foreach($proyecto->tecnologias as $t)
+                        <img src="uploads/{{$t->imagen}}" class="inline-block w-9" alt="no hay imagen">
+                        @endforeach
+                    </div>
                 </div>
             </div>
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
