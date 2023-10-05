@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tecnologia extends Model
+class Proyectos_tecnologia extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'nombre',
-        'imagen'
+        'proyecto_id',
+        'tecnologia_id'
     ];
-
-    public function proyectos(){
-        return $this->belongsToMany(Proyecto::class, 'proyectos_tecnologias');
-    }
 }

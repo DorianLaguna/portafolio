@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proyecto;
+use App\Models\Proyectos_tecnologia;
 use App\Models\Tecnologia;
 use Illuminate\Http\Request;
 
@@ -28,13 +29,20 @@ class ProyectoController extends Controller
 
     public function create(){
 
-        return view('proyectos.crear');
+        $tecnologias = Tecnologia::all();
+
+        return view('proyectos.crear',[
+            'tecnologias' => $tecnologias
+        ]);
     }
 
     public function show(Proyecto $proyecto){
 
+        $tecnologias = $proyecto->tecnologias;
+
         return view('proyectos.editar',[
-            'proyecto' => $proyecto
+            'proyecto' => $proyecto,
+            'tecnologias' => $tecnologias
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Proyecto;
+use App\Models\Proyectos_tecnologia;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -16,6 +17,9 @@ class AgregarProyecto extends Component
     public $imagen;
     public $contador = 0;
 
+    public $tecnologias;
+    public $tecnologiasCheck = [];
+
     use WithFileUploads;
 
     protected $rules = [
@@ -24,7 +28,8 @@ class AgregarProyecto extends Component
         'link' => 'required',
         'dia_inicio' => 'required',
         'dia_final' => 'required',
-        'imagen' => 'required|image|max:1024'
+        'imagen' => 'required|image|max:1024',
+        'tecnologiasCheck' => 'nullable'
     ];
 
     public function updateLenght(){
@@ -39,7 +44,7 @@ class AgregarProyecto extends Component
         $datos['imagen'] = str_replace('public/proyectos/', '', $imagen);
 
         //Crea el proyecto
-        Proyecto::create([
+        $proyecto = Proyecto::create([
             'titulo' => $datos['titulo'],
             'descripcion' => $datos['descripcion'],
             'imagen' => $datos['imagen'],
@@ -47,6 +52,15 @@ class AgregarProyecto extends Component
             'dia_inicio' => $datos['dia_inicio'],
             'dia_final' => $datos['dia_final'],
         ]);
+        
+        //crea la relacion proyectos-tecnologias
+        foreach ($datos['tecnologiasCheck'] as $relacion) {
+            Proyectos_tecnologia::create([
+                'proyecto_id' => $proyecto->id,
+                'tecnologia_id' => $relacion
+            ]);
+        }
+
         //Crear mensaje
         session()->flash('mensaje', 'Se publico el proyecto correctamente');
 

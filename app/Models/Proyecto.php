@@ -17,4 +17,8 @@ class Proyecto extends Model
         'dia_inicio',
         'dia_final'
     ];
+
+    public function tecnologias(){
+        return $this->belongsToMany(Tecnologia::class, 'proyectos_tecnologias');
+    }
 }
