@@ -38,7 +38,7 @@ class ProyectoController extends Controller
 
     public function show(Proyecto $proyecto){
 
-        $tecnologias = $proyecto->tecnologias;
+        $tecnologias = Tecnologia::all();
 
         return view('proyectos.editar',[
             'proyecto' => $proyecto,

@@ -13,9 +13,14 @@ class UpdateProyecto extends Component
     public $proyecto;
     public $message;
     public $proyecto_id;
+    public $tecnologias;
+    public $tecnologiasProyecto;
+    public $tecnologiasSeleccionadas = [];
 
+    //variables de objeto proyecto
     public $titulo;
     public $descripcion;
+    public $tecnologiasCheck;
     public $link;
     public $dia_inicio;
     public $dia_final;
@@ -27,16 +32,24 @@ class UpdateProyecto extends Component
     protected $rules = [
         'titulo' => 'required',
         'descripcion' => 'required|max:270',
+        'tecnologiasCheck' => 'nullable',
         'link' => 'required',
         'dia_inicio' => 'required',
         'dia_final' => 'required',
         'imagen_nueva' => 'nullable|image|max:2048'
     ];
 
-    public function mount($proyecto){
+    public function mount($proyecto, $tecnologias){
         $this->texto = $proyecto->texto;
         $this->cuenta = strlen($proyecto->descripcion);
         $this->proyecto_id = $proyecto->id;
+        $this->tecnologias = $tecnologias;
+
+        //apartar tecnologias de cada proyecto
+        $this->tecnologiasProyecto = $proyecto->tecnologias;
+        foreach ($this->tecnologiasProyecto as $tec) {
+            $this->tecnologiasSeleccionadas[] = $tec->id;
+        }
 
         $this->titulo = $proyecto->titulo;
         $this->descripcion = $proyecto->descripcion;

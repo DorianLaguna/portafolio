@@ -31,14 +31,10 @@
                 @enderror
             </div>
 
+
+            {{-- Eleccion de tecnologias de  cada proyecto --}}
             <div>
                 <x-input-label for="tecnologias" :value="__('Tecnologias')" />
-
-                <p>Las tecnologias son las siguientes: 
-                    @foreach ($tecnologiasCheck as $check)
-                        $check
-                    @endforeach
-                </p>
 
                 @if (!empty($tecnologias))
                     <div class="flex flex-wrap sm:grid sm:grid-cols-4 gap-4 p-2 mb-2">
@@ -56,9 +52,7 @@
                         @endforeach
                     </div>
                 @else
-
-                <p class="text-center my-4 font-medium text-sm text-gray-700 dark:text-gray-300">No has agregado alguna tecnologia</p>
-                    
+                    <p class="text-center my-4 font-medium text-sm text-gray-700 dark:text-gray-300">No has agregado alguna tecnologia</p>
                 @endif
 
                 @error('link')
@@ -66,6 +60,7 @@
                 @enderror
             </div>
     
+            {{-- link de cada proyecto --}}
             <div>
                 <x-input-label for="link" :value="__('Link')" />
                 <x-text-input id="link" class="block mt-1 w-full" type="text" wire:model="link" :value="old('link')" required autofocus />
@@ -75,6 +70,7 @@
                 @enderror
             </div>
 
+            {{-- fechas de cada proyecto --}}
             <div class="mt-4">
                 <x-input-label for="dia_inicio" :value="__('Fecha inicio de proyecto')" />
     
@@ -100,6 +96,8 @@
                 @enderror
             </div>
 
+
+            {{-- imagen de cada proyecto --}}
             <div class="mt-4">
                 <x-input-label for="imagen" :value="__('Imagen previa')" />
                 

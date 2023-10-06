@@ -43,6 +43,34 @@
                     <livewire:mostrar-alerta :message="$message"/>
             @enderror
         </div>
+        
+        <div>
+            <x-input-label for="tecnologias" :value="__('Tecnologias')" />
+
+            @if (!empty($tecnologias))
+                <div class="flex flex-wrap sm:grid sm:grid-cols-4 gap-4 p-2 mb-2">
+                    @foreach ($tecnologias as $tecnologia)
+                        <label for="" class="inline-flex items-center">
+                            <input 
+                            id="tecnologia_id" 
+                            value="{{$tecnologia->id}}" 
+                            wire:model="tecnologiasCheck" 
+                            type="checkbox" 
+                            {{in_array($tecnologia->id, $tecnologiasSeleccionadas) ? 'checked' : ''}}
+                            class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" >
+                            <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">{{ $tecnologia->nombre}}</span>
+                        </label>
+                    @endforeach
+                </div>
+            @else
+                <p class="text-center my-4 font-medium text-sm text-gray-700 dark:text-gray-300">No has agregado alguna tecnologia</p>
+            @endif
+
+            @error('link')
+                <livewire:mostrar-alerta :message="$message"/>
+            @enderror
+        </div>
+
     
         <div>
             <x-input-label for="link" :value="__('Link')" />
