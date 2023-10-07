@@ -72,7 +72,7 @@
                 </h1>
                 <p class="mb-3 text-sm">{{Str::substr(Str::replace('-', '/', $proyecto->dia_inicio), 0, 7) }} - {{Str::substr(Str::replace('-', '/', $proyecto->dia_final), 0, 7)}}</p>
                 <p class="mb-8 text-lg leading-relaxed">{{$proyecto->descripcion}}</p>
-                <div class="flex justify-between w-full">
+                <div class="flex justify-center md:justify-start w-full">
                     <x-project-link :href="$proyecto->link">
                         Link
                     </x-project-link>
