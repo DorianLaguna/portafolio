@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Editar Tecnologias') }}
@@ -8,6 +8,10 @@
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
     @endpush
 
+    <x-project-link href="{{route('proyecto.index')}}" class="mt-5 ml-3">
+        Volver
+    </x-project-link >
+    
     <div class="min-h-screen flex sm:justify-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
         <div class="w-full flex flex-col-reverse md:flex-row gap-5 md:w-3/4 xl:w-1/2 h-2/3 mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
             <form id="dropzone" method="POST" enctype="multipart/form-data" action="{{route('imagenes.store')}}" class="dropzone dark:bg-gray-800 border-dashed border-gray-300 text-gray-400 border-2 w-full h-96 rounded flex flex-col justify-center items-center">
@@ -47,4 +51,4 @@
         </div>
 
     </div>
-</x-app-layout>
+</x-admin>

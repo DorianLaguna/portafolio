@@ -135,7 +135,10 @@
             @enderror
         </div>
     
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between mt-4">
+            <x-project-link href="{{route('proyecto.index')}}" class="bg-red-600">
+                Cancelar
+            </x-project-link >
             <x-primary-button class="ml-3 bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-800 dark:hover:bg-indigo-800 dark:text-white">
                 {{ __('Guardar cambios') }}
             </x-primary-button>
