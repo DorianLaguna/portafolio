@@ -52,7 +52,6 @@
                     @foreach ($tecnologias as $tecnologia)
                         <label for="" class="inline-flex items-center">
                             <input 
-                            id="tecnologia_id" 
                             value="{{$tecnologia->id}}" 
                             wire:model="tecnologiasCheck" 
                             type="checkbox" 

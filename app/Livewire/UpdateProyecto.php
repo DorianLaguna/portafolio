@@ -20,7 +20,7 @@ class UpdateProyecto extends Component
     //variables de objeto proyecto
     public $titulo;
     public $descripcion;
-    public $tecnologiasCheck;
+    public $tecnologiasCheck = [];
     public $link;
     public $dia_inicio;
     public $dia_final;
@@ -44,11 +44,13 @@ class UpdateProyecto extends Component
         $this->cuenta = strlen($proyecto->descripcion);
         $this->proyecto_id = $proyecto->id;
         $this->tecnologias = $tecnologias;
+        $this->proyecto = $proyecto;
 
-        //apartar tecnologias de cada proyecto
+        //crea array con tecnologias del proyecto
         $this->tecnologiasProyecto = $proyecto->tecnologias;
         foreach ($this->tecnologiasProyecto as $tec) {
             $this->tecnologiasSeleccionadas[] = $tec->id;
+            $this->tecnologiasCheck[] = $tec->id;
         }
 
         $this->titulo = $proyecto->titulo;
@@ -69,7 +71,21 @@ class UpdateProyecto extends Component
             $imagen = $this->imagen_nueva->store('public/proyectos');
             $datos['imagen'] = str_replace('public/proyectos/', '', $imagen);
         }
-        
+
+        //Elimina las tecnologias no usadas
+        foreach ($this->tecnologiasSeleccionadas as $tecAnterior) {
+            if( !in_array($tecAnterior, $datos['tecnologiasCheck'] )){
+                $this->proyecto->tecnologias()->detach($tecAnterior);
+            }
+        }
+
+        //agrega las tecnologias usadas
+        foreach($datos['tecnologiasCheck'] as $tecActualizada){
+            if( !in_array($tecActualizada, $this->tecnologiasSeleccionadas)){
+                $this->proyecto->tecnologias()->attach($tecActualizada);
+            }
+        }
+
         $proyecto = Proyecto::find($this->proyecto_id);
 
         $proyecto->titulo = $datos['titulo'];
